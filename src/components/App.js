@@ -28,7 +28,7 @@ function App() {
   const htmlList = list.map((item, i) => {
     console.log('holi');
     return (
-      <li>
+      <li className="li">
         {item.quote} {item.character}
       </li>
     );
@@ -60,12 +60,12 @@ function App() {
       </header>
       <main>
         <ul className="ulList">{htmlList}</ul>
-        <h2>Añadir una nueva frase</h2>
-        <form>
+        <h2 className="subtitle">¡Añadir una nueva frase!</h2>
+        <form className="form">
           {/* cambia la variable dependiendo de lo que pone la uausaria */}
           <label>Frase</label>
           <input
-            className="new-quote__input"
+            className="input"
             type="text"
             name="quote"
             id="quote"
@@ -75,8 +75,9 @@ function App() {
             /*CONTROLAR LOS INPUTS*/
             value={newText.quote}
           />
+          <label>Personaje</label>
           <input
-            className="new-character__input"
+            className="input"
             type="text"
             name="character"
             id="character"
@@ -89,7 +90,7 @@ function App() {
 
           {/*botón evento click*/}
           <input
-            className="new-quote__btn"
+            className="btn"
             type="submit"
             value="Añadir"
             /*EVENTO CLICK*/
