@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import localStorage from '../services/localStorage';
 import API from '../services/fetchList';
 import logo from '../images/friends-logo.png';
+import letters from '../images/letters.jpg';
 
 function App() {
   //variables de estado
@@ -97,8 +98,14 @@ function App() {
   return (
     <div className="page">
       <header className="header">
+        <img className="logo_letters" src={letters} alt="Logo letters" />
+
+        <img
+          className="logo"
+          src={logo}
+          alt="Dibujo siluetas de los personajes de Friends"
+        />
         <h1 className="header__title">Frases de Friends</h1>
-        <img className="logo" src={logo} alt="Logo de Friends" />
 
         <form className="filter">
           <label className="filter__label" htmlFor="character">
@@ -131,46 +138,51 @@ function App() {
         </form>
       </header>
       <main>
-        <ul className="quotes_list">{htmlList}</ul>
-        <h2 className="new-quote__title">¡Añadir una nueva frase!</h2>
-        <form className="new-quote__form">
-          <label className="new-quote__label" htmlFor="quote">
-            <span className="new-quote__label-text">Frase</span>
-            <input
-              className="new-quote__text"
-              type="text"
-              name="quote"
-              id="quote"
-              placeholder=""
-              onChange={handleNewText}
-              value={newText.quote}
-            />
-          </label>
+        <section className="photo_background">
+          <ul className="quotes_list">{htmlList}</ul>
+        </section>
 
-          <label className="new-quote__label" htmlFor="character">
-            <span className="new-quote__label-text">Personaje</span>
-            <input
-              className="new-quote__text"
-              type="text"
-              name="character"
-              id="character"
-              placeholder=""
-              /*EVENTO CHANGE*/
-              onChange={handleNewText}
-              /*CONTROLAR LOS INPUTS*/
-              value={newText.character}
-            />
-          </label>
+        <div className="new-quote__color">
+          <h2 className="new-quote__title">¡Añadir una nueva frase!</h2>
+          <form className="new-quote__form">
+            <label className="new-quote__label" htmlFor="quote">
+              <span className="new-quote__label-text">Frase</span>
+              <input
+                className="new-quote__text"
+                type="text"
+                name="quote"
+                id="quote"
+                placeholder=""
+                onChange={handleNewText}
+                value={newText.quote}
+              />
+            </label>
 
-          <button
-            className="new-quote__btn"
-            type="submit"
-            value="Añadir"
-            onClick={handleClick}
-          >
-            Añadir
-          </button>
-        </form>
+            <label className="new-quote__label" htmlFor="character">
+              <span className="new-quote__label-text">Personaje</span>
+              <input
+                className="new-quote__text"
+                type="text"
+                name="character"
+                id="character"
+                placeholder=""
+                /*EVENTO CHANGE*/
+                onChange={handleNewText}
+                /*CONTROLAR LOS INPUTS*/
+                value={newText.character}
+              />
+            </label>
+
+            <button
+              className="new-quote__btn"
+              type="submit"
+              value="Añadir"
+              onClick={handleClick}
+            >
+              Añadir
+            </button>
+          </form>
+        </div>
       </main>
     </div>
   );
