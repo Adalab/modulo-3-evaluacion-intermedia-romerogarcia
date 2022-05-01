@@ -1,35 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+
 * {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(235, 235, 235);
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
-.title {
-    color: rgb(199, 97, 240);
-    display: flex;
-    justify-content: center;
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page {
+  padding: 1rem;
+  
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #7cbb00;
+    font-size: 45px;
+    font-family: 'Square Peg', cursive;
     text-transform: uppercase;
-}
-
-.li {
-    list-style: none;
-}
-
-.subtitle {
-    color: rgb(90, 90, 82);
-    font-size: medium;
-    padding-left: 40px;
-}
-.form {
-    padding-left: 40px;
-}
-
-
-.btn {
-    background-color: rgb(199, 97, 240);
-    color: aliceblue;
-    border: none;
-    border-radius: 10px;
-    width: 80px;
-    height: 30px;
     
+  }
+}
+
+  .filter {
+    &__select {
+      margin-left: 0.1rem;
+      padding: 0.25rem 0;
+      margin: 0.5rem;
+      width: 15rem;
+      border: 1px solid #7cbb00;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all ease 0.25s;
+
+      &:hover {
+        border: 1px solid #ddd;
+      }
+    }
+  }
+
+
+.quotes {
+  &__item {
+    position: relative;
+    width: 30rem;
+    margin: 0 1rem 1rem 0;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(38, 107, 163, 0.322);
+  }
+
+  &__quote {
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  &__character {
+    padding-bottom: 0.5rem;
+    color: #7cbb00;
+    font-size: 1.25rem;
+  }
+}
+
+.new-quote {
+  &__form {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.75rem;
+
+
+    &-text {
+      display: inline-block;
+      width: 15rem;
+    }
+  }
+
+  &__text {
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #666;
+    outline: none;
+  }
+
+  &__btn {
+    padding: 0.25rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #7cbb00;
+    font-weight: bold;
+    color: #fff;
+    &:hover {
+      background-color: #38a853;
+    }
+  }
 }
